@@ -1,14 +1,14 @@
 {
   "name": "qrar",
   "version": "0.0.0",
-  "description": "ERROR: No README.md file found!",
+  "description": "Emits decoded QR codes found by your pet flying robot.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "",
-  "author": "",
-  "license": "BSD",
+  "repository": "https://github.com/GraemeF/arqr.git",
+  "author": "Graeme Foster",
+  "license": "MIT",
   "dependencies": {
     "ar-drone": "0.0.4",
     "qrcode-emitter": "0.0.0"

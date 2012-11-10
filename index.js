@@ -1,46 +1,25 @@
-var Canvas = require('canvas');
-var Image = Canvas.Image;
-var qrcode = require('jsqrcode')(Canvas);
 var http = require('http');
 var client = require('ar-drone');
+var util = require("util");
+var events = require("events");
+var QRcodes = require('qrcode-emitter');
 
-var png = null;
+var QRAR = function (client) {
+  events.EventEmitter.call(this);
+  this.client = client;
+};
 
-opts = {};
+util.inherits(QRAR, events.EventEmitter);
 
-var server = http.createServer(function(req, res) {
+QRAR.prototype.start = function () {
+  var png = this.client.createPngStream();
 
-  if (!png) {
-    png = client.createPngStream({
-      log: process.stderr
-    });
-    png.on('error', function(err) {
-      console.error('png stream ERROR: ' + err);
-    });
-  }
-
-  res.writeHead(200, {
-    'Content-Type': 'multipart/x-mixed-replace; boundary=--daboundary'
+  var self = this;
+  var decoder = new QRcodes(png);
+  decoder.on('qrcode', function (code) {
+    self.emit('qrcode', code);
   });
+  decoder.start();
+};
 
-  png.on('data', sendPng);
-  png.on('data', scanForCode);
-
-  function sendPng(buffer) {
-    console.log(buffer.length);
-    res.write('--daboundary\nContent-Type: image/png\nContent-length: ' + buffer.length + '\n\n');
-    res.write(buffer);
-  }
-
-  function scanForCode(image) {
-    try {
-      var result = qrcode.decode(image);
-      console.log('result of qr code: ' + result);
-    } catch (e) {
-      console.log('qr error:', e);
-    }
-  }
-
-});
-
-server.listen(opts.port || 8000);
+module.exports = QRAR;

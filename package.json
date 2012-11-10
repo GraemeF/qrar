@@ -10,8 +10,7 @@
   "author": "",
   "license": "BSD",
   "dependencies": {
-    "jsqrcode": "0.0.4",
     "ar-drone": "0.0.4",
-    "canvas": "~0.13.1"
+    "qrcode-emitter": "0.0.0"
   }
 }

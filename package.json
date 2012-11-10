@@ -1,6 +1,6 @@
 {
   "name": "qrar",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Emits decoded QR codes found by your pet flying robot.",
   "main": "index.js",
   "scripts": {

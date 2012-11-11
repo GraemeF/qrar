@@ -19,6 +19,11 @@ QRAR.prototype.start = function () {
   decoder.on('qrcode', function (code) {
     self.emit('qrcode', code);
   });
+
+  png.on('data', function (image) {
+    self.emit('image', image);
+  });
+
   decoder.start();
 };
 

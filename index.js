@@ -12,15 +12,15 @@ var QRAR = function (client) {
 util.inherits(QRAR, events.EventEmitter);
 
 QRAR.prototype.start = function () {
-  var png = this.client.createPngStream();
-
   var self = this;
-  var decoder = new QRcodes(png);
+  var images = this.client.createPngStream();
+  var decoder = new QRcodes(images);
+
   decoder.on('qrcode', function (code) {
     self.emit('qrcode', code);
   });
 
-  png.on('data', function (image) {
+  images.on('data', function (image) {
     self.emit('image', image);
   });
 

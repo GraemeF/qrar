@@ -19,6 +19,9 @@ codes.on('qrcode', function (code) {
 codes.start();
 ```
 
+__Note__: The [vicapow/jsqrcode](https://github.com/vicapow/jsqrcode) module that decodes the codes currently outputs a lot
+of noise to the console - I had to dip in there and stop it.
+
 This program starts an ar-drone REPL:
 
 ```javascript

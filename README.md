@@ -40,4 +40,4 @@ Then you can show QR codes like these to your drone and it will obey!
 ### land()
 ![land()](http://api.qrserver.com/v1/create-qr-code/?data=landi\(\)&size=250x250)
 
-See felixge/node-ar-drone for the available commands. There are lots of free QR code generators online that work from a smartphone (in fact you can just tweak the above image URLs to get started).
+See [felixge/node-ar-drone](https://github.com/felixge/node-ar-drone) for the available commands. There are lots of free QR code generators online that work from a smartphone (in fact you can just tweak the above image URLs to get started).

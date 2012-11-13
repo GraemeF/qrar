@@ -11,6 +11,6 @@
   "license": "MIT",
   "dependencies": {
     "ar-drone": "0.0.4",
-    "qrcode-emitter": "0.0.0"
+    "qrcode-emitter": "0.1.1"
   }
 }

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "https://github.com/GraemeF/arqr.git",
+  "repository": "https://github.com/GraemeF/qrar.git",
   "author": "Graeme Foster",
   "license": "MIT",
   "dependencies": {

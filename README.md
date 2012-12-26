@@ -2,6 +2,14 @@
 
 You can use this package to decode any QR codes spotted by your [Parrot AR.Drone](http://ardrone2.parrot.com/)'s camera.
 
+## Prerequisites
+
+The QR code module used requires [Cairo](http://cairographics.org/) and [FFmpeg](http://ffmpeg.org/); I used [Homebrew](http://mxcl.github.com/homebrew/) to install both of these on Mac OS X:
+
+```bash
+brew install cairo ffmpeg
+```
+
 ## Example
 
 This program outputs all of the decoded QR codes to the console:
